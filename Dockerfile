@@ -4,7 +4,16 @@ LABEL maintainer="Leo 'song.lhlh@gmail.com'"
 WORKDIR /app
 COPY . ./
 
+ARG VITE_ALLOW_CODE
+ENV VITE_ALLOW_CODE=$VITE_ALLOW_CODE
+
+# 添加以下行，明确指定 ONNX Runtime 使用 CPU
+ENV ONNXRUNTIME_EXECUTION_PROVIDERS=CPU_ExecutionProvider
+
+RUN apk add --no-cache python3 make g++
+
 RUN echo "https://registry.npmmirror.com" > .npmrc && \
+
     npm install -g pnpm@8.7.6 && \
     pnpm install --frozen-lockfile && \
     pnpm build

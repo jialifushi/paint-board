@@ -61,11 +61,11 @@ const GuideInfo: React.FC = () => {
               repo:
               <a
                 className="link link-primary inline-block ml-1 mr-3 break-all"
-                href="https://github.com/LHRUN/paint-board"
+                href="https://video.hezhuang.dpdns.org/"
                 target="_blank"
                 rel="noreferrer"
               >
-                github.com/LHRUN/paint-board
+                画累了去看会电影吧！
               </a>
               {t('info.welecome')}⭐️
             </div>

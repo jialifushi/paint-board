@@ -1,9 +1,13 @@
-import Board from '@/pages/board'
+import Board from '@/pages/board';
+import LoginPage from './pages/login'; // 确保路径正确
+import { useAuthStore } from './store/auth';
 
 function App() {
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+
   return (
     <div>
-      <Board />
+      {isAuthenticated ? <Board /> : <LoginPage />}
     </div>
   )
 }

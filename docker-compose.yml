@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  paint-board:
+    build: .
+    container_name: paint-board-app
+    ports:
+      - "8080:80"
+    environment:
+      - VITE_ALLOW_CODE=please_change_me_in_docker_compose
+    restart: unless-stopped
